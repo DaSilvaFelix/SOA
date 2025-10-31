@@ -3,7 +3,7 @@ import morgan from "morgan";
 import express from "express";
 import Env from "./configs/env";
 import session from "express-session";
-import { userRoutes } from "./routes/user.routes";
+import userRoutes from "./routes/user.routes";
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(
   session({
-    secret: "tu_clave_secreta",
+    secret: Env.JWT_SECRET!,
     resave: false,
     saveUninitialized: false,
     cookie: {

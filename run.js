@@ -4,11 +4,11 @@ import path from "path";
 const services = [
   { name: "API-GATEWAY", cwd: "./Api-Gateway" },
   { name: "USER-SERVICE", cwd: "./User-Service" },
-  { name: "AUTH-SERVICE", cwd: "./Auth-Service" },
-  { name: "CHATBOT-SERVICE", cwd: "./ChatBot-Service" },
-  { name: "CULTIVO-SERVICE", cwd: "./Cultivos-Service" },
-  { name: "GANADO-SERVICE", cwd: "./Ganado-Service" },
-  { name: "PARCELA-SERVICE", cwd: "./Parcela-Service" },
+  //   { name: "AUTH-SERVICE", cwd: "./Auth-Service" },
+  //   { name: "CHATBOT-SERVICE", cwd: "./ChatBot-Service" },
+  //   { name: "CULTIVO-SERVICE", cwd: "./Cultivos-Service" },
+  //   { name: "GANADO-SERVICE", cwd: "./Ganado-Service" },
+  //   { name: "PARCELA-SERVICE", cwd: "./Parcela-Service" },
 ];
 
 services.forEach(({ name, cwd }) => {
