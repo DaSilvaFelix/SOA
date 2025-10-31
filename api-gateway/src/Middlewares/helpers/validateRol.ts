@@ -17,8 +17,6 @@ export const validarRol = (...allowedRoles: string[]) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const user = req.user;
 
-    // Asumiendo que el usuario ya está autenticado y su rol está en req.user
-
     if (!user) {
       return res.status(401).json({ msg: "Usuario no autenticado" });
     }
