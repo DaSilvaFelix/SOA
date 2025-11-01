@@ -8,6 +8,7 @@ import connections from "./config/db";
 import session from "express-session";
 import cultivosRouter from "./routers/cultivos/cultivos.router";
 import parcelaRouter from "./routers/parcelas/parcelas.router";
+import ganadoRouter from "./routers/ganado/ganado.router";
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use("/api", usersRouter);
 app.use("/api", authRoutes)
 app.use("/api", cultivosRouter)
 app.use("/api", parcelaRouter)
+app.use("/api", ganadoRouter)
 
 app.listen(Env.PORT, async () => {
   console.log(` 

@@ -1,11 +1,6 @@
 import { Router } from "express";
 import { createGanado, deleteGanado, findAll, findByID, update } from "../Controllers/Ganado.Controller";
 
-
-
-
-
-
 export const ganadoRoutes = Router();
 
 

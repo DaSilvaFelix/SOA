@@ -3,6 +3,7 @@ import morgan from "morgan"
 import express from "express"
 import Env from "./configs/env"
 import { ganadoRoutes } from "./Routes/ganado.Routes"
+import connections from "./configs/db"
 
 const app = express()
 
@@ -13,7 +14,7 @@ app.use(express.json())
 
 app.use("/ganado", ganadoRoutes)
 
-app.listen(Env.PORT, () => {
+app.listen(Env.PORT, async () => {
 
 
     console.log(` 
@@ -25,5 +26,6 @@ app.listen(Env.PORT, () => {
     =======================================
 
           `);
+    await connections()
 
 })
