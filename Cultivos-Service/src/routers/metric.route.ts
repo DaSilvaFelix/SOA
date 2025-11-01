@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getMetric } from "agricultura/Controllers/metric.Controller";
+import { getMetric } from "../Controllers/metric.Controller";
 
 export const metricRouter = Router();
 

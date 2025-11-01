@@ -1,5 +1,5 @@
-import { CultivoModel } from "agricultura/Models/cultivo.mongo";
-import { MetricRepo } from "agricultura/repositories/metric.repo";
+import { CultivoModel } from "../Models/cultivo.mongo";
+import { MetricRepo } from "../repositories/metric.repo";
 
 export class MetricCultivo implements MetricRepo {
   async getMetricForType(): Promise<any> {

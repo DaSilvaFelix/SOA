@@ -1,5 +1,5 @@
 import { Schema, Types, model } from "mongoose";
-import { ICultivo } from "agricultura/types/ICultivos";
+import { ICultivo } from "../types/ICultivos";
 
 const CultivoSchema = new Schema<ICultivo>({
 

@@ -1,5 +1,5 @@
-import { MetricCultivo } from "agricultura/repoMongo/metricas_repo";
-import { RepoMetric } from "agricultura/Service/metric.Service";
+import { MetricCultivo } from "../repoMongo/metricas_repo";
+import { RepoMetric } from "../Service/metric.Service";
 import { Request, Response } from "express";
 
 const metricRepo = new MetricCultivo();

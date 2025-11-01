@@ -1,6 +1,5 @@
-import { ICultivo } from "agricultura/types/ICultivos";
-import { ICultivoMongo } from "agricultura/types/ICultivos";
-import { Types } from "mongoose";
+import { ICultivo } from "../types/ICultivos";
+import { ICultivoMongo } from "../types/ICultivos";
 
 export interface ICultivosRepo {
   findByID(id: any): Promise<ICultivo[] | null>;

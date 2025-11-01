@@ -1,7 +1,6 @@
-import { ICultivosRepo } from "agricultura/repositories/cultivos.repo";
-import { ICultivo } from "agricultura/types/ICultivos";
-import { ICultivoMongo } from "agricultura/types/ICultivos";
-import { Types } from "mongoose";
+import { ICultivosRepo } from "../repositories/cultivos.repo";
+import { ICultivo } from "../types/ICultivos";
+import { ICultivoMongo } from "../types/ICultivos";
 
 export class CultivoService implements ICultivosRepo {
   constructor(private readonly mongorepo: ICultivosRepo) { }

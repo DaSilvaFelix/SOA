@@ -6,6 +6,7 @@ import usersRouter from "./routers/users/users.route";
 import authRoutes from "./routers/auth/auth.route";
 import connections from "./config/db";
 import session from "express-session";
+import cultivosRouter from "./routers/cultivos/cultivos.router";
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(session({
 
 app.use("/api", usersRouter);
 app.use("/api", authRoutes)
+app.use("/api", cultivosRouter)
 
 app.listen(Env.PORT, async () => {
   console.log(` 
