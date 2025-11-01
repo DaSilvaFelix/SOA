@@ -1,5 +1,5 @@
 import { IUser } from "../types/UserType";
 
-export interface IcreateUser {
+export interface ICreateUser {
     createUser(user: IUser): Promise<IUser>
 }

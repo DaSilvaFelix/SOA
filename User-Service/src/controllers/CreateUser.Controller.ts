@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { CreateUserMongoRepo, FindByEmailMongo } from "../mongoRepository/UserMongoRepo";
-import { IcreateUser } from "../repositories/createUser";
+import { ICreateUser } from "../repositories/createUser";
 import { CreateUserService } from "../Services/createUser.service";
 import { validarUsuario } from "../validations/user.validation";
 import { IUser } from "../types/UserType";
 
-const createUserMongo: IcreateUser = new CreateUserMongoRepo()
+const createUserMongo: ICreateUser = new CreateUserMongoRepo()
 const uniqueEmail: FindByEmailMongo = new FindByEmailMongo()
 const createUserService = new CreateUserService(createUserMongo, uniqueEmail)
 

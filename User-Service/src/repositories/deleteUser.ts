@@ -1,7 +1,4 @@
-
-
-
-
+import { Types } from "mongoose"
 export interface IDeleteUser {
-    DeleteUser(id: any): Promise<void>
+    DeleteUser(id: Types.ObjectId): Promise<void>
 }

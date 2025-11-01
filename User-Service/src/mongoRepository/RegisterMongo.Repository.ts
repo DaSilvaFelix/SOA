@@ -4,7 +4,7 @@ import { IUser } from "../types/UserType";
 
 export class RegisterMongo implements IRegisterRepoAdmin {
   async createUser(user: IUser): Promise<IUser> {
-    const admin = new UserModel({ ...user, role: "admin" });
+    const admin = new UserModel({ ...user, rol: "admin" });
 
     return await admin.save();
   }

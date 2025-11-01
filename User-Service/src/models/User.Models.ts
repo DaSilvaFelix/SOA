@@ -1,6 +1,7 @@
-import mongoose, { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
+import { IUser } from "../types/UserType";
 
-const UserSchema = new Schema({
+const UserSchema = new Schema<IUser>({
   name: {
     type: String,
     required: true,
@@ -8,12 +9,13 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true
   },
   password: {
     type: String,
     required: true,
   },
-  rol: {
+  role: {
     type: String,
     required: true,
     enum: ["Ganadero", "Agricultor", "Mixto", "admin"],
@@ -21,4 +23,4 @@ const UserSchema = new Schema({
   },
 });
 
-export const UserModel = mongoose.model("Users", UserSchema);
+export const UserModel = model("Users", UserSchema);

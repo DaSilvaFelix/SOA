@@ -1,5 +1,5 @@
 import { UserModel } from "../models/User.Models";
-import { IcreateUser } from "../repositories/createUser";
+import { ICreateUser } from "../repositories/createUser";
 import { IDeleteUser } from "../repositories/deleteUser";
 import { IFindByEmail } from "../repositories/FindByEmail";
 import { IFindUsers } from "../repositories/findUsers";
@@ -12,7 +12,7 @@ export class FindByEmailMongo implements IFindByEmail {
   }
 }
 
-export class CreateUserMongoRepo implements IcreateUser {
+export class CreateUserMongoRepo implements ICreateUser {
   async createUser(user: IUser): Promise<IUser> {
     const newUser = new UserModel(user);
     return await newUser.save();

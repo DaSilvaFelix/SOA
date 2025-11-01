@@ -1,10 +1,10 @@
-import { IcreateUser } from "../repositories/createUser";
+import { ICreateUser } from "../repositories/createUser";
 import { IUser } from "../types/UserType";
 import * as bcrypt from "bcrypt-ts";
 import { IFindByEmail } from "../repositories/FindByEmail";
 
-export class CreateUserService implements IcreateUser {
-  constructor(private readonly userRepo: IcreateUser, private readonly uniqueEmail: IFindByEmail) {}
+export class CreateUserService implements ICreateUser {
+  constructor(private readonly userRepo: ICreateUser, private readonly uniqueEmail: IFindByEmail) { }
   async createUser(user: IUser): Promise<IUser> {
     const hashedPassword = await bcrypt.hash(user.password, 10);
     const findEmail = await this.uniqueEmail.findByEmail(user.email);
