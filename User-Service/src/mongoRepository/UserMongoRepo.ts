@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 import { UserModel } from "../models/User.Models";
 import { ICreateUser } from "../repositories/createUser";
 import { IDeleteUser } from "../repositories/deleteUser";
@@ -18,6 +19,7 @@ export class CreateUserMongoRepo implements ICreateUser {
     return await newUser.save();
   }
 }
+
 export class FindUserMongo implements IFindUsers {
   async findUsers(): Promise<IUser[]> {
     return await UserModel.find();
@@ -28,8 +30,9 @@ export class FindUserMongo implements IFindUsers {
 }
 
 export class UpdateUSerMongo implements IUpadateUser {
-  async updateUser(id: any, user: Partial<IUser>): Promise<IUser | null> {
-    return await UserModel.findByIdAndUpdate(id, user, { new: true });
+  async updateUser(id: string, user: Partial<IUser>): Promise<IUser | null> {
+    const idValid = new Types.ObjectId(id)
+    return await UserModel.findByIdAndUpdate(idValid, user, { new: true });
   }
 }
 export class DeleteUserMongo implements IDeleteUser {

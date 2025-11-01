@@ -3,8 +3,8 @@ import { IUpadateUser } from "../repositories/updateUset";
 import { IUser } from "../types/UserType";
 
 export class UpdateUserService implements IUpadateUser {
-  constructor(private readonly updateUserService: IUpadateUser, private readonly uniqueEmail: IFindByEmail) {}
-  async updateUser(id: any, user: Partial<IUser>): Promise<IUser | null> {
+  constructor(private readonly updateUserService: IUpadateUser, private readonly uniqueEmail: IFindByEmail) { }
+  async updateUser(id: string, user: Partial<IUser>): Promise<IUser | null> {
     if (user.email) {
       const findEmail = await this.uniqueEmail.findByEmail(user.email);
       if (findEmail) {
