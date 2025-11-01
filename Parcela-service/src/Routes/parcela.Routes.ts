@@ -1,9 +1,5 @@
 import { Router } from "express";
-import { createGanado } from "Ganado/Controllers/Ganado.Controller";
-import { createParcela, deleteParcela, findAll, findByID, update } from "Parcela/Controllers/parcela.Controller";
-import { validateJWT } from "utils/helpers/validateJWT";
-import { validarRol } from "utils/helpers/validateRol";
-
+import { createParcela, findAll, findByID, update, deleteParcela } from "../Controllers/parcela.Controller";
 
 
 
@@ -11,8 +7,8 @@ import { validarRol } from "utils/helpers/validateRol";
 export const parcelaRoutes = Router();
 
 
-parcelaRoutes.get("/parcela", validateJWT, validarRol("Agricultor", "admin", "Mixto"), findAll)
-parcelaRoutes.get("/parcela/:id", validateJWT, validarRol("Agricultor", "admin", "Mixto"), findByID)
+parcelaRoutes.get("/", findAll)
+parcelaRoutes.get("/:id", findByID)
 parcelaRoutes.post("/createParcela", createParcela);
-parcelaRoutes.put("/updateParcela/:id", validateJWT, validarRol("Agricultor", "admin", "Mixto"), update)
-parcelaRoutes.delete("/delete/:id", validateJWT, validarRol("Agricultor", "admin", "Mixto"), deleteParcela)
+parcelaRoutes.put("/updateParcela/:id", update)
+parcelaRoutes.delete("/delete/:id", deleteParcela)

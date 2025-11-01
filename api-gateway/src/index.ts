@@ -7,6 +7,7 @@ import authRoutes from "./routers/auth/auth.route";
 import connections from "./config/db";
 import session from "express-session";
 import cultivosRouter from "./routers/cultivos/cultivos.router";
+import parcelaRouter from "./routers/parcelas/parcelas.router";
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(session({
 app.use("/api", usersRouter);
 app.use("/api", authRoutes)
 app.use("/api", cultivosRouter)
+app.use("/api", parcelaRouter)
 
 app.listen(Env.PORT, async () => {
   console.log(` 
