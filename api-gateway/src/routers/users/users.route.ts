@@ -65,7 +65,7 @@ usersRouter.post("/users/createUser", validateJWT, validarRol("admin"), async (r
 // ✅
 usersRouter.put("/users/updateUser/:id", validateJWT, validarRol("admin"), async (req: Request, res: Response) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
     const response = await fetch(`${Env.USER_SERVICE_URL}/users/updateUser/${id}`, {
       method: "PUT",
       headers: {
@@ -94,7 +94,7 @@ usersRouter.put("/users/updateUser/:id", validateJWT, validarRol("admin"), async
 // ✅
 usersRouter.delete("/users/deleteUser/:id", validateJWT, validarRol("admin"), async (req: Request, res: Response) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
     const response = await fetch(`${Env.USER_SERVICE_URL}/users/deleteUser/${id}`, {
       method: "DELETE",
       headers: {
@@ -148,11 +148,10 @@ usersRouter.get("/users/allUser", async (req: Request, res: Response) => {
   }
 });
 
-
 // ✅
 usersRouter.get("/users/:id", validateJWT, validarRol("admin"), async (req: Request, res: Response) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
     const response = await fetch(`${Env.USER_SERVICE_URL}/users/${id}`, {
       method: "GET",
       headers: {
@@ -177,6 +176,5 @@ usersRouter.get("/users/:id", validateJWT, validarRol("admin"), async (req: Requ
     return res.status(200).json({ msg: "error inesperado por favor intente de nuevo " });
   }
 });
-
 
 export default usersRouter;

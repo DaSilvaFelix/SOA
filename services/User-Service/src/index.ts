@@ -17,7 +17,7 @@ app.use(
     secret: Env.JWT_SECRET!,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false, maxAge: 3600000, },
+    cookie: { secure: false, maxAge: 3600000 },
   })
 );
 app.use("/users", userRoutes);
@@ -25,12 +25,12 @@ app.use("/users", userRoutes);
 app.listen(Env.PORT, async () => {
   console.log(` 
     
-    =======================================
-    🚀 USER-SERVICE iniciado correctamente
-    📡 URL:   http://localhost:${Env.PORT}
-    🔌 Puerto: ${Env.PORT}
-  =======================================
+=======================================
+🚀 USER-SERVICE iniciado correctamente
+📡 URL:   http://localhost:${Env.PORT}
+🔌 Puerto: ${Env.PORT}
+=======================================
   
   `);
-  await connections()
+  await connections();
 });
